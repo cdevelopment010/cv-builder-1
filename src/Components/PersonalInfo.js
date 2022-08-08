@@ -13,7 +13,7 @@ class PersonalInfo extends Component {
                     </div>
                     <div className="right">
                         {this.props.data.websiteCount.map((site,index)=> {
-                                return <a key={site} href={'https://'+site} target="_blank">{site}</a>
+                                return <p key={site}><a  href={'https://'+site} target="_blank">{site}</a></p>
                         })}
                     </div>
                     </div>
