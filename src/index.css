@@ -7,18 +7,22 @@
   margin: 1em; 
 }
 
-.col {
-  display: flex;
-  flex-direction: column;
+.col-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
-
-
 
 .row {
+  width: 100%; 
   display: flex;
-  flex-wrap: wrap;
+  margin: auto;
+  justify-content: space-between;
 }
 
+
+input {
+  width: 100%; 
+}
 
 input, button {
   border-radius: 2px;

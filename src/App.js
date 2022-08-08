@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NameArea from "./Components/NameAreaInputs";
+import PersonalInfo from "./Components/PersonalInfo";
 // import EducationInputs from "./Components/EducationInputs";
 
 
@@ -12,7 +13,8 @@ class App extends Component {
           name: '',
           email: '',
           phone: '', 
-          websiteCount: [1]
+          about: '',
+          websiteCount: ['']
         }
       }
 
@@ -23,8 +25,18 @@ class App extends Component {
     updateText( e ) {
       let targetStateArea = e.target.id.split('-')[0]; 
       let targetStateField = e.target.id.split('-')[1]; 
+
+
       let currState = this.state[targetStateArea];
-      currState[targetStateField] = e.target.value;
+      if (Array.isArray(currState[targetStateField])) {
+        let arrIndex = e.target.id.split('-')[2];
+        currState[targetStateField][arrIndex] = e.target.value;
+      } else {
+        currState[targetStateField] = e.target.value;
+        
+        console.log(currState[targetStateField]);
+      }
+      
       this.setState({
           [targetStateArea]: currState
       })
@@ -36,7 +48,7 @@ class App extends Component {
     let targetStateField = e.target.id.split('-')[1]; 
     let currState = this.state[targetStateArea];
     let count = currState[targetStateField];
-    count.push(count.length+1);
+    count.push('');
     currState[targetStateField] = count;
     this.setState({
       [targetStateArea]: currState
@@ -48,14 +60,14 @@ class App extends Component {
     return (
       <div className="App">
         <div>
-        Hello, world 2.0
+        <h2>CV-Builder</h2>
         <NameArea callback={this.updateText} info={this.state.personalInfo} newField={this.addRecord}/>  
         {/* <EducationInputs />   */}
 
 
         </div>
         <div>
-
+          <PersonalInfo data={this.state.personalInfo}/>
         </div>
       </div>
     )

@@ -24,19 +24,39 @@ class Inputs extends Component {
 
 
     render() {
-        return (
-        <div>
-            <input 
-                autoComplete="off"
-                onChange={this.props.callback} 
-                value={this.props.TextVal} 
-                placeholder={this.state.placeholder} 
-                type={!this.props.type ? 'Text' : this.state.type}
-                onBlur={this.validField}
-                id={this.props.idVal}
-                />
-        </div>
-        )
+
+        if (this.props.type == "TextArea") {
+            return (
+                <div>
+                    <textarea 
+                        autoComplete="off"
+                        onChange={this.props.callback} 
+                        value={this.props.TextVal} 
+                        placeholder={this.state.placeholder} 
+                        type={!this.props.type ? 'Text' : this.state.type}
+                        onBlur={this.validField}
+                        id={this.props.idVal}
+                        width='100'
+                        />
+                </div>
+            )
+        }
+
+        else {
+            return (
+                <div>
+                    <input 
+                        autoComplete="off"
+                        onChange={this.props.callback} 
+                        value={this.props.TextVal} 
+                        placeholder={this.state.placeholder} 
+                        type={!this.props.type ? 'Text' : this.state.type}
+                        onBlur={this.validField}
+                        id={this.props.idVal}
+                        />
+                </div>
+            )
+        }
     }
 }
 
