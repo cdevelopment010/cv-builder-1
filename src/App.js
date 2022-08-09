@@ -4,6 +4,8 @@ import PersonalInfo from "./Components/PersonalInfo";
 import EducationInputs from "./Components/EducationInputs";
 import EducationInfo from "./Components/educationInfo";
 import CareerInputs from "./Components/CareerInputs";
+import ProjectInputs from "./Components/ProjectInputs";
+import SkillsInput from "./Components/SkillsInput";
 
 class App extends Component {
 
@@ -123,7 +125,8 @@ class App extends Component {
         <NameArea callback={this.updateText} info={this.state.personalInfo} newField={this.addRecord}/>  
         <EducationInputs callback={this.updateText} info={this.state.educationInfo} newField={this.addRecord}/>  
         <CareerInputs callback={this.updateText} info={this.state.careerInfo} newField={this.addRecord}/>
-
+        <ProjectInputs callback={this.updateText} info={this.state.projectInfo} newField={this.addRecord}/>
+        <SkillsInput callback={this.updateText} info={this.state.skillInfo} newField={this.addRecord}/>
 
         </div>
         <div className="border">
