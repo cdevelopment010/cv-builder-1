@@ -25,7 +25,7 @@ class Inputs extends Component {
 
     render() {
 
-        if (this.props.type == "TextArea") {
+        if (this.props.type === "TextArea") {
             return (
                 <div>
                     <textarea 

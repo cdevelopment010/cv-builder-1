@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import NameArea from "./Components/NameAreaInputs";
+import NameArea from "./Components/Inputs/NameAreaInputs";
 import PersonalInfo from "./Components/PersonalInfo";
-import EducationInputs from "./Components/EducationInputs";
+import EducationInputs from "./Components/Inputs/EducationInputs";
 import EducationInfo from "./Components/educationInfo";
-import CareerInputs from "./Components/CareerInputs";
-import ProjectInputs from "./Components/ProjectInputs";
-import SkillsInput from "./Components/SkillsInput";
+import CareerInputs from "./Components/Inputs/CareerInputs";
+import ProjectInputs from "./Components/Inputs/ProjectInputs";
+import SkillsInput from "./Components/Inputs/SkillsInput";
+import ReferenceInput from "./Components/Inputs/ReferenceInput";
+import DocumentStyle from "./Components/DocumentStyle";
 
 class App extends Component {
 
@@ -127,7 +129,10 @@ class App extends Component {
         <CareerInputs callback={this.updateText} info={this.state.careerInfo} newField={this.addRecord}/>
         <ProjectInputs callback={this.updateText} info={this.state.projectInfo} newField={this.addRecord}/>
         <SkillsInput callback={this.updateText} info={this.state.skillInfo} newField={this.addRecord}/>
-
+        <ReferenceInput callback={this.updateText} info={this.state.referenceInfo} newField={this.addRecord}/>
+        <DocumentStyle />
+        
+        <button type="button">Print</button>
         </div>
         <div className="border">
           <PersonalInfo data={this.state.personalInfo}/>
