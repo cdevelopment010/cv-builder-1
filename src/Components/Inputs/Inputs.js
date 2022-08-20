@@ -29,7 +29,7 @@ class Inputs extends Component {
             return (
                 <div>
                     <textarea 
-                        autoComplete="off"
+                        autoComplete="nope" //Need to put an invalid value to reall turn off autoComplete
                         onChange={this.props.callback} 
                         value={this.props.TextVal} 
                         placeholder={this.state.placeholder} 
@@ -46,7 +46,7 @@ class Inputs extends Component {
             return (
                 <div>
                     <input 
-                        autoComplete="off"
+                        autoComplete="nope" //Need to put an invalid value to reall turn off autoComplete
                         onChange={this.props.callback} 
                         value={this.props.TextVal} 
                         placeholder={this.state.placeholder} 

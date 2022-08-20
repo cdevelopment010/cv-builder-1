@@ -1,13 +1,27 @@
 import React, { Component } from "react";
+import Footer from "./Components/Footer";
+
 import NameArea from "./Components/Inputs/NameAreaInputs";
-import PersonalInfo from "./Components/PersonalInfo";
+import PersonalInfo from "./Components/Outputs/PersonalInfo";
+
 import EducationInputs from "./Components/Inputs/EducationInputs";
-import EducationInfo from "./Components/educationInfo";
+import EducationInfo from "./Components/Outputs/educationInfo";
+
 import CareerInputs from "./Components/Inputs/CareerInputs";
+import CareerInfo from "./Components/Outputs/CareerInfo";
+
 import ProjectInputs from "./Components/Inputs/ProjectInputs";
+import ProjectInfo from "./Components/Outputs/ProjectInfo";
+
 import SkillsInput from "./Components/Inputs/SkillsInput";
+import SkillInfo from "./Components/Outputs/SkillInfo";
+
 import ReferenceInput from "./Components/Inputs/ReferenceInput";
+import ReferenceInfo from "./Components/Outputs/ReferenceInfo";
+
 import DocumentStyle from "./Components/DocumentStyle";
+
+
 
 class App extends Component {
 
@@ -123,7 +137,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="border">
-        <h2>CV-Builder</h2>
+        <h2 className="text-center mt-2 text-underline">CV-Builder</h2>
         <NameArea callback={this.updateText} info={this.state.personalInfo} newField={this.addRecord}/>  
         <EducationInputs callback={this.updateText} info={this.state.educationInfo} newField={this.addRecord}/>  
         <CareerInputs callback={this.updateText} info={this.state.careerInfo} newField={this.addRecord}/>
@@ -134,10 +148,16 @@ class App extends Component {
         
         <button type="button">Print</button>
         </div>
-        <div className="border">
+
+        <div className="cv">
           <PersonalInfo data={this.state.personalInfo}/>
           <EducationInfo data={this.state.educationInfo}/>
+          <CareerInfo data={this.state.careerInfo} />
+          <ProjectInfo data={this.state.projectInfo} />
+          <SkillInfo data={this.state.skillInfo} />
+          <ReferenceInfo data={this.state.referenceInfo} />
         </div>
+        <Footer />
       </div>
     )
   }

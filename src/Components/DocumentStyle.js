@@ -8,7 +8,7 @@ class DocumentStyle extends Component {
                 <h3>Document Style</h3>
                 <div>
                     <div>
-                        <label for="PrimColor">Primary  Color</label>
+                        <label htmlFor="PrimColor">Primary  Color</label>
                         <select id="PrimColor" name="PrimColor">
                             <option value="black">Black</option>
                             <option value="red">Red</option>
@@ -18,7 +18,7 @@ class DocumentStyle extends Component {
                         </select>
                     </div>
                     <div>
-                        <label for="TextColor">Text  Color</label>
+                        <label htmlFor="TextColor">Text  Color</label>
                         <select id="TextColor" name="TextColor">
                             <option value="black">Black</option>
                             <option value="red">Red</option>
@@ -27,11 +27,11 @@ class DocumentStyle extends Component {
                         </select>
                     </div>
                     <div>
-                        <label for="PFontSize">Paragraph Font Size</label>
+                        <label htmlFor="PFontSize">Paragraph Font Size</label>
                         <input type="number" id="PFontSize"/>
                     </div>
                     <div>
-                        <label for="PFontStyle">Paragraph Font Style</label>
+                        <label htmlFor="PFontStyle">Paragraph Font Style</label>
                         <select id="PFontStyle" name="PFontStyle">
                             <option value="bold">Bold</option>
                             <option value="italic">Italic</option>
@@ -39,11 +39,11 @@ class DocumentStyle extends Component {
                         </select>
                     </div>
                     <div>
-                        <label for="HFontSize">Heading Font Size</label>
+                        <label htmlFor="HFontSize">Heading Font Size</label>
                         <input type="number" id="HFontSize"/>
                     </div>
                     <div>
-                        <label for="HFontStyle">Heading Font Style</label>
+                        <label htmlFor="HFontStyle">Heading Font Style</label>
                         <select id="HFontStyle" name="HFontStyle">
                             <option value="bold">Bold</option>
                             <option value="italic">Italic</option>

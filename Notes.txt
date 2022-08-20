@@ -1,1 +1,4 @@
-Issue with website and how to store the link. 
+* Delete an input if not used? Double click on it?
+* Style the input side of the builder.
+* update colors on change
+* color picker rather than a dropdown?
