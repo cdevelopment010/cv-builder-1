@@ -5,7 +5,7 @@ class SkillInfo extends Component {
     render() {
         return (
             <div className="m-2 mr-3">
-                <h2>Skills</h2>
+                <h2 className="section-label">Skills</h2>
                 <ul className="skills">
                 {this.props.data.skills.map((skill,index)=> {
                         if(skill === "") {
@@ -14,8 +14,8 @@ class SkillInfo extends Component {
                             )
                         } else {
                             return(
-                                <li key={index}>
-                                    <span >
+                                <li key={index} className="prim-col">
+                                    <span className="p-text">
                                         {skill}
                                     </span>
                                 </li>

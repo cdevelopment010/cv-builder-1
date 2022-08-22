@@ -7,16 +7,18 @@ class SkillsInput extends Component {
         return (
             <div className="inputSection">
                 <h3>Skills</h3>
+                <div  className="grid-container">
+                    <div className="grid-3-col">
                 {this.props.info.skills.map((skill,index)=> {
                        return (
-                        <div key={index} className="col">
-                            <div className="row">
+                        <div key={index}>
                                 <Inputs  placeholder='Project Name' TextVal={skill} callback={this.props.callback} idVal={`skillInfo-skills-${index}-input`} />
-                            </div>
                         </div>
                        ) 
                     })}
-                    <button type="button" onClick={this.props.newField} id='skillInfo-skills-btn'>Click me!</button>
+                </div>
+                </div>
+                    <button type="button" onClick={this.props.newField} id='skillInfo-skills-btn'>Add skill</button>
             </div>
         )
     }

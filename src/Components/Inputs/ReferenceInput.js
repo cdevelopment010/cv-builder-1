@@ -9,8 +9,8 @@ class ReferenceInput extends Component {
                 <h3>References</h3>
                 {this.props.info.reference.map((ref,index)=> {
                        return (
-                        <div key={index} className="col">
-                            <div className="row">
+                        <div key={index} className="grid-container">
+                            <div className="grid-3-col">
                                 <Inputs  placeholder='Name' TextVal={ref.name} callback={this.props.callback} idVal={`referenceInfo-reference-${index}-name-input`} />
                                 <Inputs  placeholder='Email' type='Email' TextVal={ref.email} callback={this.props.callback} idVal={`referenceInfo-reference-${index}-email-input`} />
                                 <Inputs  placeholder='Phone' TextVal={ref.phone} callback={this.props.callback} idVal={`referenceInfo-reference-${index}-phone-input`} />
@@ -18,7 +18,7 @@ class ReferenceInput extends Component {
                         </div>
                        ) 
                     })}
-                    <button type="button" onClick={this.props.newField} id='referenceInfo-reference-btn'>Click me!</button>
+                    <button type="button" onClick={this.props.newField} id='referenceInfo-reference-btn'>Add Reference</button>
             </div>
         )
     }

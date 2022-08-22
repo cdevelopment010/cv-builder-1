@@ -17,9 +17,9 @@ class PersonalInfo extends Component {
                         })}
                     </div>
                     </div>
-                <div class="about m-2 mr-3">
-                    <h2>About Me</h2>
-                    <p>{this.props.data.about}</p>
+                <div className="about m-2 mr-3">
+                    <h2 className="section-label">About Me</h2>
+                    <p className="p-text">{this.props.data.about}</p>
                 </div>
             </div>
         )

@@ -2,6 +2,9 @@
   --h2-font-size: 30px;
   --primary-color: black;
   --header-color: white;
+  --text-color: black;
+  --text-size: 1rem;
+  --section-size: 1.5em;
 }
 
 
@@ -89,11 +92,17 @@
 .pb-4 {padding-bottom: 1rem}
 .pb-5 {padding-bottom: 1.5rem}
 
+.align-right {text-align: right;}
+.d-grid { display: grid;}
+.grid-container {display: grid;gap:0.25rem;}
+.grid-3-col {display:grid;grid-template-columns: repeat(3,1fr);gap:0 1rem;}
+.grid-2-col {display:grid;grid-template-columns: repeat(2,1fr);gap:0 1rem;}
+.grid-1-col {display:grid;grid-template-columns: repeat(1,1fr);gap:0 1rem;}
 
-.align-right {
-  text-align: right;
-}
+.grid-gap-r1{row-gap: 1rem;}
+.grid-gap-0{gap:0}
 
+.border { border: 1px solid black;}
 /**********************/
 
 h2 {
@@ -101,27 +110,18 @@ h2 {
   font-size: var(--h2-font-size);
   margin-bottom: 0.5rem;
 }
-
+.prim-col{color: var(--primary-color);}
 .header {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-auto-rows: 1fr;
   background-color: var(--primary-color);
 }
-
+.header h1 {font-size:2.2em;}
 .header p, .header h1, .header a {
   font-weight: bold; 
   color: var(--header-color); 
   /* filter: saturate(0) grayscale(1) brightness(.7) contrast(1000%) invert(1); */
-}
-
-.border {
-  border: 1px solid black;
-}
-
-.App {
-  display: grid; 
-  grid-template-columns: 1fr 1fr;
 }
 
 .inputSection {
@@ -129,28 +129,66 @@ h2 {
 }
 
 
-input, textarea {
+
+input, textarea, select {
   width: 100%; 
 }
 
-input, button, textarea {
+input, button, textarea, select {
   border-radius: 2px;
   outline: none;
   border:1px solid;
-  margin: 0 5px;
+  margin: 0;
 }
 .Error {
   border: 3px solid red;
 }
 
+button{
+  border-radius: 5px;
+  padding: 2px 5px; 
+  outline: none; 
+  border: 1ps solid transparent; 
+  background-color:rgb(73, 73, 109);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s
+}
+button:hover {
+  color:rgb(73, 73, 109); 
+  background-color: white;
+  border: 1px solid rgb(73, 73, 109);
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.25);
+}
 
+
+.p-text {
+  color: var(--text-color);
+  font-size: var(--text-size);
+}
+
+.section-label {
+  font-size: var(--section-size);
+}
+
+/*** Title of the input side ****/
+.title {color: black}
+
+/*** print button ****/
+#printBtn {
+  width: max-content;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  padding: 10px 100px; 
+  margin: 10px;
+  font-weight: bold;
+}
 
 
 
 /***** Education ******/
-.ed {
-  display: grid; 
-}
+
 
 .edName {
   display: grid; 
@@ -160,9 +198,6 @@ input, button, textarea {
 
 
 /***** Career ******/
-.career {
-  display: grid; 
-}
 
 .careerName {
   display: grid; 
@@ -172,9 +207,7 @@ input, button, textarea {
 
 
 /***** Projects ******/
-.project {
-  display: grid; 
-}
+
 
 .projectName {
   display: grid; 
@@ -200,10 +233,7 @@ input, button, textarea {
 /**********************/
 
 /***** references ******/
-.references {
-  display: grid; 
-  grid-template-columns: 1fr 1fr;
-}
+
 .ref {
   display: flex; 
   flex-direction: column;
@@ -254,3 +284,29 @@ footer img {
   height: 50px; 
   width: 50px; 
 }
+
+/**** Document style ****/
+
+.d-input {
+  display: grid;
+  grid-template-columns:minmax(150px,auto) 1fr;
+  margin-bottom: 5px; 
+  align-items: center;
+}
+.d-input label {
+  width: 100%; 
+}
+
+
+/******* on print *******/
+
+
+@media print {
+  .print-hide {
+    display: none;
+  }
+
+  .print-page {
+    grid-column: 1/3;
+  }
+} 

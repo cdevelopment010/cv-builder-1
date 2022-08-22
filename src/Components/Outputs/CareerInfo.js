@@ -5,7 +5,7 @@ class CareerInfo extends Component {
     render() {
         return (
             <div className="m-2 mr-3">
-                <h2>Career</h2>
+                <h2 className="section-label">Career</h2>
                 {this.props.data.career.map((car,index)=> {
                                 let dateRange;
                                 if (car.to && car.from) {
@@ -17,13 +17,13 @@ class CareerInfo extends Component {
                                     <div key={index} className="mb-3 career">
                                         <div className="careerName mb-2">
                                             <div>
-                                                <span><h4>{car.title}</h4></span>
-                                                <div>{car.company}</div>
+                                                <span className="p-text"><h4>{car.title}</h4></span>
+                                                <div className="p-text">{car.company}</div>
                                             </div>
-                                            <span className="align-right">{dateRange}</span>
+                                            <span className="align-right p-text">{dateRange}</span>
                                         </div>
                                         <div>
-                                            <p>{car.overview}</p>
+                                            <p className="p-text">{car.overview}</p>
                                         </div>
                                     </div>
                                     

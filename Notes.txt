@@ -1,4 +1,4 @@
 * Delete an input if not used? Double click on it?
 * Style the input side of the builder.
-* update colors on change
-* color picker rather than a dropdown?
+* Add text color
+* Add function to handle font size and font styling

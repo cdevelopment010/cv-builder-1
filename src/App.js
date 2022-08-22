@@ -76,6 +76,11 @@ class App extends Component {
 
       this.updateText = this.updateText.bind(this);
       this.addRecord = this.addRecord.bind(this);
+      this.printCV = this.printCV.bind(this);
+    }
+
+    printCV( ) {
+      window.print();
     }
 
     updateText( e ) {
@@ -135,9 +140,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="border">
-        <h2 className="text-center mt-2 text-underline">CV-Builder</h2>
+      <div className="grid-2-col grid-gap-0">
+        <div className="border print-hide d-grid">
+        <h2 className="text-center mt-2 text-underline title">CV-Builder</h2>
         <NameArea callback={this.updateText} info={this.state.personalInfo} newField={this.addRecord}/>  
         <EducationInputs callback={this.updateText} info={this.state.educationInfo} newField={this.addRecord}/>  
         <CareerInputs callback={this.updateText} info={this.state.careerInfo} newField={this.addRecord}/>
@@ -146,10 +151,10 @@ class App extends Component {
         <ReferenceInput callback={this.updateText} info={this.state.referenceInfo} newField={this.addRecord}/>
         <DocumentStyle />
         
-        <button type="button">Print</button>
+        <button type="button" id="printBtn" onClick={this.printCV}>Print</button>
         </div>
 
-        <div className="cv">
+        <div className="cv print-page">
           <PersonalInfo data={this.state.personalInfo}/>
           <EducationInfo data={this.state.educationInfo}/>
           <CareerInfo data={this.state.careerInfo} />
@@ -157,7 +162,7 @@ class App extends Component {
           <SkillInfo data={this.state.skillInfo} />
           <ReferenceInfo data={this.state.referenceInfo} />
         </div>
-        <Footer />
+        <Footer/>
       </div>
     )
   }

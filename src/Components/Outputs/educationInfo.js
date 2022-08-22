@@ -5,7 +5,7 @@ class EducationInfo extends Component {
     render() {
         return (
             <div className="m-2 mr-3">
-                <h2>Education</h2>
+                <h2 className="section-label">Education</h2>
                 <div>
                         {this.props.data.institute.map((ed,index)=> {
                                 let dateRange;
@@ -23,13 +23,13 @@ class EducationInfo extends Component {
                                     <div key={index} className="ed mb-3">
                                         <div className="edName mb-2">
                                             <div>
-                                                <span><h4>{ed.school}</h4></span>
-                                                <span>{ed.areaStudy}</span>  <span>{grade}</span>
+                                                <span className="p-text"><h4>{ed.school}</h4></span>
+                                                <span className="p-text">{ed.areaStudy}</span>  <span className="p-text">{grade}</span>
                                             </div>
-                                            <span className="align-right">{dateRange}</span>
+                                            <span className="align-right p-text">{dateRange}</span>
                                         </div>
                                         <div>
-                                            <p>{ed.overview}</p>
+                                            <p className="p-text">{ed.overview}</p>
                                         </div>
                                     </div>
                                     
