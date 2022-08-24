@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
 :root {
   --h2-font-size: 30px;
   --primary-color: black;
   --header-color: white;
   --text-color: black;
   --text-size: 1rem;
+  --text-italic: normal;
+  --text-underline: normal;
+  --text-bold: normal;
   --section-size: 1.5em;
+  --section-italic: normal;
+  --section-underline: normal;
+  --section-bold: bold;
 }
 
 
@@ -14,6 +21,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*** helper classes ***/
@@ -102,6 +110,10 @@
 .grid-gap-r1{row-gap: 1rem;}
 .grid-gap-0{gap:0}
 
+.d-flex{display:flex}
+
+
+.w-auto{width:auto!important}
 .border { border: 1px solid black;}
 /**********************/
 
@@ -117,9 +129,9 @@ h2 {
   grid-auto-rows: 1fr;
   background-color: var(--primary-color);
 }
-.header h1 {font-size:2.2em;}
+.header h1 {font-size:2.2em;font-weight: bold; }
 .header p, .header h1, .header a {
-  font-weight: bold; 
+  
   color: var(--header-color); 
   /* filter: saturate(0) grayscale(1) brightness(.7) contrast(1000%) invert(1); */
 }
@@ -165,10 +177,16 @@ button:hover {
 .p-text {
   color: var(--text-color);
   font-size: var(--text-size);
+  font-style: var(--text-italic);
+  text-decoration: var(--text-underline);
+  font-weight: var(--text-bold);
 }
 
 .section-label {
   font-size: var(--section-size);
+  font-style: var(--section-italic);
+  text-decoration: var(--section-underline);
+  font-weight: var(--section-bold);
 }
 
 /*** Title of the input side ****/

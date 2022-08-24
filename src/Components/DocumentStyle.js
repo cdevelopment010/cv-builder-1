@@ -7,8 +7,47 @@ class DocumentStyle extends Component {
         this.updatePrimCol = this.updatePrimCol.bind(this);
         this.updateHeaderCol = this.updateHeaderCol.bind(this);
         this.updateTextCol = this.updateTextCol.bind(this);
+        this.updateFontSize = this.updateFontSize.bind(this);
+        this.updateFontStyle = this.updateFontStyle.bind(this);
     }
 
+    updateFontStyle( e ){
+        let r = document.querySelector(':root');
+        let propToUpdate = '';
+        let propVal;
+        if(e.target.id.indexOf('P') >=0) {
+            propToUpdate+="--text-"+e.target.value;
+        } else {
+            propToUpdate+="--section-"+e.target.value;
+        }
+        
+        switch (e.target.value){
+            case 'bold':
+                propVal = 'Bold';
+                break;
+            case 'italic':
+                propVal = 'Italic';
+                break;
+            case 'underline':
+                propVal = 'underline';
+                break;
+            default:
+                propVal = 'normal';
+                break;
+        }
+
+        if (!e.target.checked){
+            propVal = 'normal';
+        } 
+        console.log(propVal);
+        r.style.setProperty(propToUpdate,propVal);
+    }
+
+    updateFontSize( e ){
+        let r = document.querySelector(':root');
+        let propToUpdate = e.target.id.indexOf('P') >= 0 ? '--text-size' : '--section-size'; 
+        r.style.setProperty(propToUpdate, e.target.value + 'px');
+    }
 
     updatePrimCol( e ) {
         let r = document.querySelector(':root');
@@ -42,29 +81,49 @@ class DocumentStyle extends Component {
                     </div>
                     <div className="d-input">
                         <label htmlFor="PFontSize">Paragraph Font Size</label>
-                        <input type="number" id="PFontSize"/>
+                        <input type="number" id="PFontSize" onChange={this.updateFontSize}/>
                     </div>
-                    <div className="d-input">
-                        <label htmlFor="PFontStyle">Paragraph Font Style</label>
-                        <select id="PFontStyle" name="PFontStyle">
-                            <option value="bold">Bold</option>
-                            <option value="italic">Italic</option>
-                            <option value="underline">Underline</option>
-                        </select>
-                    </div>
+                    
                     <div className="d-input">
                         <label htmlFor="HFontSize">Section Font Size</label>
-                        <input type="number" id="HFontSize"/>
-                    </div>
-                    <div className="d-input">
-                        <label htmlFor="HFontStyle">Section Font Style</label>
-                        <select id="HFontStyle" name="HFontStyle">
-                            <option value="bold">Bold</option>
-                            <option value="italic">Italic</option>
-                            <option value="underline">Underline</option>
-                        </select>
+                        <input type="number" id="HFontSize" onChange={this.updateFontSize}/>
                     </div>
                 </div>
+                <div className="grid-1-col">
+                        <div className="mb-1 mt-1">Paragraph Font Style:</div>
+                        <div className="grid-3-col">
+                                <label htmlFor="PFSBold" className="d-flex">
+                                    Bold
+                                    <input value="bold" id="PFSBold" type="checkbox" className="w-auto ml-2" onChange={this.updateFontStyle}/>
+                                </label>
+                                <label htmlFor="PFSItalic" className="d-flex">
+                                    Italic
+                                    <input value="italic" id="PFSItalic" type="checkbox" className="w-auto ml-2" onChange={this.updateFontStyle}/>
+                                </label>
+                                <label htmlFor="PFSUnderline" className="d-flex">
+                                    Underline
+                                    <input value="underline" id="PFSUnderline" type="checkbox" className="w-auto ml-2" onChange={this.updateFontStyle}/>
+                                </label>
+                        </div>
+                </div>
+                <div className="grid-1-col">
+                        <div className="mb-1 mt-1">Section Font Style:</div>
+                        <div className="grid-3-col">
+                                <label htmlFor="SFSBold" className="d-flex" >
+                                    Bold
+                                    <input value="bold" id="SFSBold" type="checkbox" className="w-auto ml-2" onChange={this.updateFontStyle} checked/>
+                                </label>
+                                <label htmlFor="SFSItalic" className="d-flex">
+                                    Italic
+                                    <input value="italic" id="SFSItalic" type="checkbox" className="w-auto ml-2" onChange={this.updateFontStyle}/>
+                                </label>
+                                <label htmlFor="SFSUnderline" className="d-flex">
+                                    Underline
+                                    <input value="underline" id="SFSUnderline" type="checkbox" className="w-auto ml-2" onChange={this.updateFontStyle}/>
+                                </label>
+                        </div>
+                </div>
+                
             </div>
         )
     }

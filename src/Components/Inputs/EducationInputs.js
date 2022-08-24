@@ -16,8 +16,8 @@ class EducationInputs extends Component {
                                 <Inputs  placeholder='To:' TextVal={ed.to} callback={this.props.callback} idVal={`educationInfo-institute-${index}-to-input`}/>
                             </div>
                             <div className="grid-3-col">
-                                <Inputs  placeholder='Grade' TextVal={ed.grade} callback={this.props.callback} idVal={`educationInfo-institute-${index}-grade-input`}/>
                                 <Inputs  placeholder='Area of study' TextVal={ed.areaStudy} callback={this.props.callback} idVal={`educationInfo-institute-${index}-areaStudy-input`}/>
+                                <Inputs  placeholder='Grade' TextVal={ed.grade} callback={this.props.callback} idVal={`educationInfo-institute-${index}-grade-input`}/>
                             </div>
                             <div>
                                 <Inputs  placeholder='Overview (optional)' type="TextArea" TextVal={ed.overview} callback={this.props.callback} idVal={`educationInfo-institute-${index}-overview-input`}/>
