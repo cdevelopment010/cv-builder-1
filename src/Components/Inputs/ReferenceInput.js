@@ -18,7 +18,7 @@ class ReferenceInput extends Component {
                         </div>
                        ) 
                     })}
-                    <button type="button" onClick={this.props.newField} id='referenceInfo-reference-btn'>Add Reference</button>
+                    <button type="button" onClick={this.props.newField} id='referenceInfo-reference-btn' className="mt-1">Add Reference</button>
             </div>
         )
     }

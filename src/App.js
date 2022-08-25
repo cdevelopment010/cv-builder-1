@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Footer from "./Components/Footer";
 
 import NameArea from "./Components/Inputs/NameAreaInputs";
 import PersonalInfo from "./Components/Outputs/PersonalInfo";
@@ -140,8 +139,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="grid-2-col grid-gap-0">
-        <div className="border print-hide d-grid">
+      <div className="grid-2-col grid-gap-0 grid-sm">
+        <div className="border print-hide d-grid border-bottom-0">
         <h2 className="text-center mt-2 text-underline title">CV-Builder</h2>
         <NameArea callback={this.updateText} info={this.state.personalInfo} newField={this.addRecord}/>  
         <EducationInputs callback={this.updateText} info={this.state.educationInfo} newField={this.addRecord}/>  
@@ -162,7 +161,6 @@ class App extends Component {
           <SkillInfo data={this.state.skillInfo} />
           <ReferenceInfo data={this.state.referenceInfo} />
         </div>
-        <Footer/>
       </div>
     )
   }

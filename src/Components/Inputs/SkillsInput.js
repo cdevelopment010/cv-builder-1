@@ -18,7 +18,7 @@ class SkillsInput extends Component {
                     })}
                 </div>
                 </div>
-                    <button type="button" onClick={this.props.newField} id='skillInfo-skills-btn'>Add skill</button>
+                    <button type="button" onClick={this.props.newField} id='skillInfo-skills-btn' className="mt-1">Add skill</button>
             </div>
         )
     }

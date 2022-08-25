@@ -73,7 +73,7 @@ class DocumentStyle extends Component {
                     </div>
                     <div className="d-input">
                         <label htmlFor="headerCol">Header Text Color</label>
-                        <input type="color" onChange={this.updateHeaderCol}/>
+                        <input type="color" onChange={this.updateHeaderCol} value="#ffffff"/>
                     </div>
                     <div className="d-input">
                         <label htmlFor="TextColor">Paragraph Color</label>
@@ -81,12 +81,12 @@ class DocumentStyle extends Component {
                     </div>
                     <div className="d-input">
                         <label htmlFor="PFontSize">Paragraph Font Size</label>
-                        <input type="number" id="PFontSize" onChange={this.updateFontSize}/>
+                        <input type="number" id="PFontSize" onChange={this.updateFontSize} min="8"/>
                     </div>
                     
                     <div className="d-input">
                         <label htmlFor="HFontSize">Section Font Size</label>
-                        <input type="number" id="HFontSize" onChange={this.updateFontSize}/>
+                        <input type="number" id="HFontSize" onChange={this.updateFontSize}  min="15"/>
                     </div>
                 </div>
                 <div className="grid-1-col">

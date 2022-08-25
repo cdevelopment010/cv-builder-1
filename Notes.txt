@@ -1,5 +1,2 @@
 Few more issues: 
-* Header text default is white, but color option default is black
-* minimum input for text size
 * Would be nice to switch positions
-* 
