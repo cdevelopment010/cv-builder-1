@@ -111,7 +111,7 @@ class DocumentStyle extends Component {
                         <div className="grid-3-col">
                                 <label htmlFor="SFSBold" className="d-flex" >
                                     Bold
-                                    <input value="bold" id="SFSBold" type="checkbox" className="w-auto ml-2" onChange={this.updateFontStyle} checked/>
+                                    <input value="bold" id="SFSBold" type="checkbox" className="w-auto ml-2" onChange={this.updateFontStyle}/>
                                 </label>
                                 <label htmlFor="SFSItalic" className="d-flex">
                                     Italic
